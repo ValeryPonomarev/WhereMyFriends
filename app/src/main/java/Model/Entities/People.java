@@ -5,6 +5,13 @@ package Model.Entities;
  */
 public class People extends Entity {
 
+    public People() {}
+
+    public People(String name)
+    {
+        setName(name);
+    }
+
     private String name;
 
     public String getName() {

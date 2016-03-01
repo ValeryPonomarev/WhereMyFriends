@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="Context Menu">
+    <item
+        android:id="@+id/item01"
+        android:title="Добавить">
+    </item>
+    <item
+        android:id="@+id/item02"
+        android:title="Редактировать">
+    </item>
+    <item
+        android:id="@+id/item03"
+        android:title="Удалить">
+    </item>
+</menu>
