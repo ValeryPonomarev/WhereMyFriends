@@ -27,13 +27,7 @@ public class ContactListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contact_list);
         contactListView = (ListViewCompat)findViewById(R.id.contactListView);
 
-        for (Integer i = 1; i < 10; i++)
-        {
-            peoples.add(new People("Name " + i.toString()));
-        }
-
-        peoples = new ArrayList<People>();
-        peopleArrayAdapter = new PeopleArrayAdapter(this, android.R.layout.simple_list_item_1, peoples);
+        peopleArrayAdapter = new PeopleArrayAdapter(this, android.R.layout.simple_list_item_1);
 
         contactListView.setAdapter(peopleArrayAdapter);
         registerForContextMenu(contactListView);

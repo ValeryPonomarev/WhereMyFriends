@@ -9,6 +9,9 @@ import android.widget.LinearLayout;
 
 import java.util.List;
 
+import Data.IRepository;
+import Data.PeopleRepository;
+import Data.RepositoryFactory;
 import Model.Entities.People;
 
 /**
@@ -17,6 +20,14 @@ import Model.Entities.People;
 public class PeopleArrayAdapter extends ArrayAdapter<People> {
 
     int resource;
+
+    public PeopleArrayAdapter(Context context, int resource)
+    {
+        super(context, resource);
+        PeopleRepository repository = (PeopleRepository)RepositoryFactory.GetRepository();
+        List<People> peoples = repository.getItems();
+        super.addAll(peoples);
+    }
 
     public PeopleArrayAdapter(Context context, int resource, List<People> objects) {
         super(context, resource, objects);

@@ -3,9 +3,15 @@ package Model.Entities;
 /**
  * Created by drmiller on 29.02.2016.
  */
-public class Coordinate extends Entity {
+public class Coordinate {
     private int cX;
     private int cY;
+
+    public Coordinate(int cX, int cY)
+    {
+        setcX(cX);
+        setcY(cY);
+    }
 
     public int getcX() {
         return cX;

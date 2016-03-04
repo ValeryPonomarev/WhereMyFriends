@@ -6,6 +6,6 @@ package Data;
 public final class RepositoryFactory {
     public static IRepository GetRepository()
     {
-        return new TestRepository();
+        return new PeopleRepository();
     }
 }

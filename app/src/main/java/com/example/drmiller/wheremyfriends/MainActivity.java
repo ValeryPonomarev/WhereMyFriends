@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent runContactListIntent = new Intent(this, ContactListActivity.class);
-        startActivity(runContactListIntent);
+        Intent runMapsActivityIntent = new Intent(this, MapsActivity.class);
+        startActivity(runMapsActivityIntent);
     }
 }
