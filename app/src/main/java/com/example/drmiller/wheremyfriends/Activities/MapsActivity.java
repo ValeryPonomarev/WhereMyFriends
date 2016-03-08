@@ -1,4 +1,4 @@
-package com.example.drmiller.wheremyfriends;
+package com.example.drmiller.wheremyfriends.Activities;
 
 import android.Manifest;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.example.drmiller.wheremyfriends.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -68,7 +69,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        Location myLocation = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
+        Location myLocation = getLastKnownLocation();
         LatLng iAm = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
         mMap.addMarker(new MarkerOptions().position(iAm));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(iAm));

@@ -1,4 +1,4 @@
-package com.example.drmiller.wheremyfriends;
+package com.example.drmiller.wheremyfriends.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 

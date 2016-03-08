@@ -9,24 +9,13 @@ public class People extends Entity {
 
     public People(int id, String name, Coordinate coordinate)
     {
-        setID(id);
+        setId(id);
         setCoordinate(coordinate);
         setName(name);
     }
 
-
-
-    private int ID;
     private String name;
     private Coordinate coordinate;
-
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
 
     public String getName() {
         return name;
@@ -43,5 +32,10 @@ public class People extends Entity {
     public void setCoordinate(Coordinate coordinate)
     {
         this.coordinate = coordinate;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.drmiller.wheremyfriends;
+package com.example.drmiller.wheremyfriends.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,8 +10,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
+import com.example.drmiller.wheremyfriends.R;
+
 import java.util.ArrayList;
 
+import Data.PeopleRepository;
+import Data.RepositoryFactory;
 import Model.Adapters.PeopleArrayAdapter;
 import Model.Entities.People;
 
@@ -27,9 +31,9 @@ public class ContactListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contact_list);
         contactListView = (ListViewCompat)findViewById(R.id.contactListView);
 
-        peopleArrayAdapter = new PeopleArrayAdapter(this, android.R.layout.simple_list_item_1);
-
+        peopleArrayAdapter = new PeopleArrayAdapter(this, android.R.layout.simple_list_item_1, ((PeopleRepository)RepositoryFactory.GetRepository()).getItems());
         contactListView.setAdapter(peopleArrayAdapter);
+
         registerForContextMenu(contactListView);
     }
 

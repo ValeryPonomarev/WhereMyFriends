@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 
+import com.example.drmiller.wheremyfriends.R;
+
 import java.util.List;
 
 import Data.IRepository;
@@ -20,17 +22,15 @@ import Model.Entities.People;
 public class PeopleArrayAdapter extends ArrayAdapter<People> {
 
     int resource;
-
-    public PeopleArrayAdapter(Context context, int resource)
+/*
+    public PeopleArrayAdapter(Context context)
     {
-        super(context, resource);
-        PeopleRepository repository = (PeopleRepository)RepositoryFactory.GetRepository();
-        List<People> peoples = repository.getItems();
-        super.addAll(peoples);
+        this(context, R.layout.people_view);
     }
-
-    public PeopleArrayAdapter(Context context, int resource, List<People> objects) {
-        super(context, resource, objects);
+/**/
+    public PeopleArrayAdapter(Context context, int resource, List<People> peoples)
+    {
+        super(context, resource, peoples);
         this.resource = resource;
     }
 
