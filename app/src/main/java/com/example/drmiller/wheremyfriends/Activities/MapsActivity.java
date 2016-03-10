@@ -20,13 +20,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.List;
 
 import Model.Entities.Coordinate;
+import Presenters.MapsActivityController;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private List<Coordinate> coordinates;
     LocationManager mLocationManager;
-
+    MapsActivityController mapsActivityController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        mapsActivityController = new MapsActivityController(getApplicationContext());
     }
 
 
@@ -74,6 +77,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(iAm));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(iAm));
     }
+
+    
 
     private Location getLastKnownLocation() {
         if (mLocationManager == null)
